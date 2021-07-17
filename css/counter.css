@@ -1,0 +1,170 @@
+
+.box-main
+{
+    float: left;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.firsthalf
+{
+    min-width: 100%;
+    margin-top: 0%;
+    /* margin-left: 15%; */
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    flex-wrap: wrap;
+    color: black;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.firsthalf .counter
+{
+    height: 200px;
+    width: 200px;
+    background: #3498db;
+    color: white;
+    margin: 30px;
+    padding: 7px 30px 0;
+    border-radius: 100%;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+
+.firsthalf .counter::before,
+.firsthalf .counter::after
+{
+    content: ' ';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1;
+    background: linear-gradient(#555, #333 39%,
+    transparent 39%);
+    border-radius: 50%;
+}
+
+.firsthalf .counter::after
+{
+    transform: rotateX(180deg);
+}
+
+
+.firsthalf .counter i
+{
+    font-size: 30px;
+    margin: 15px auto;
+}
+
+.firsthalf .counter .number
+{
+    font-size: 30px;
+    display: block;
+    margin: 10px 0;
+    
+
+}
+
+.firsthalf .counter h3
+{
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 0 0;
+    text-transform: uppercase;
+
+}
+
+.firsthalf .counter:nth-child(2)
+{
+    background: #e74c3c;
+}
+
+.firsthalf .counter:nth-child(3)
+{
+    background: #12c24c;
+}
+
+.firsthalf .counter:nth-child(4)
+{
+    background: #9b59b6;
+} 
+
+
+.firsthalf .counter:nth-child(1):hover
+{
+    color: #3498db;
+}
+
+.firsthalf .counter:nth-child(2):hover
+{
+    color: #e74c3c;
+}
+
+.firsthalf .counter:nth-child(3):hover
+{
+    color: #12c24c;
+}
+
+.firsthalf .counter:nth-child(4):hover
+{
+    color: #9b59b6;
+}
+
+.firsthalf .counter:nth-child(1) .number:hover,
+.firsthalf .counter:nth-child(2) .number:hover,
+.firsthalf .counter:nth-child(3) .number:hover,
+.firsthalf .counter:nth-child(4) .number:hover
+{
+    color: white;
+}
+
+.background .statitiscs
+{
+    position: relative;
+    color: rgba(109, 106, 106, 0.808);
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+
+.background .statitiscs:hover
+{
+    color: whitesmoke;
+
+}
+
+
+.background .vaccinClass
+{
+    color: whitesmoke;
+    margin-top: 1%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 6%;
+}
+
+.background .vaccinClass .btn
+{
+    color: white;
+    border: 2px white solid;
+}
+
+.background .vaccinClass .btn:hover
+{
+
+    background: white;
+    color: black;
+    border: 2px black solid;
+}
+
