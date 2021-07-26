@@ -1,0 +1,265 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: poppins;
+    margin: 0;
+    display: grid;
+    font-size: 14px;
+    }
+
+    .navbar{
+        display: flex;
+        align-items: center;
+        position:relative;
+        top: 0;
+    }
+    
+    .nav-list{
+        background: black;
+        color: white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .nav-list li{
+        list-style: none;
+        padding: 25px 15px;
+    }
+    
+    .nav-list li:last-child{
+        list-style: none;
+        padding: 5px 5px;
+    }
+    
+    .nav-list li a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .nav-list li a:hover{
+        color: rgb(110, 108, 108);
+        text-decoration: none;
+    }
+    
+    .nav-list .buttons .navbtn 
+    {
+        color: white;
+        background:transparent;
+        cursor: pointer;
+        padding: 8px 20px;
+        margin: 7px 2px;
+        border: 2px solid white;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family:'Poppins', sans-serif;
+    }
+    
+    .nav-list .buttons .navbtn:hover
+    {
+        color: black;
+        background-color: white;
+        
+    }
+    
+    
+    .logo{
+        width: 20%;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        
+    }
+    
+    
+    .logo a, .logo li{
+        width: 30%;
+        padding: 0%; 
+    }
+    
+    #logoname{
+        font-family: 'Pacifico', cursive;
+        font-size: 35px;
+        font-weight: bolder;
+    
+    }
+    /* nav blank  space */
+    .nav-list .blanknav{
+        /* border: 2px solid red; */
+        width: 52%;
+    }
+    
+    .nav-list .blanknav2{
+        /* border: 2px solid green; */
+        width: 8%;
+    }
+    
+    .logo a img{
+        width: 60%;
+        border: 3px solid rgb(255, 255, 255);
+        border-radius: 50px;
+        margin-left: 15%;
+    }
+    .userprofile{
+        width: 6%;
+        display: flex;
+        padding-left: 15px;
+        align-items: center;
+        flex-direction: row;
+        display: inline-block;
+    }
+    .userprofile img{
+        background-image: url(../img/user.png);
+        width: 60%;
+        border: 3px solid white;
+        border-radius: 50px;
+        transition: all 0.1s ease-in 0s;
+    }
+    
+    .user_dropdown {
+    
+        display: none;
+        position: absolute;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 5px 5px 16px 8px rgba(16, 202, 235, 0.2);
+        padding: 12px 16px;
+        z-index: 1;
+        right: 2%;
+        top: 77%;
+    }
+    
+    
+    
+    #user_dropdown {
+        color: black;
+        text-align: center;
+        background-color: black;
+        padding: 7%;
+        
+    }
+    
+    #user_dropdown:nth-child(1):hover,
+    #user_dropdown:nth-child(2):hover
+    {
+        background-color: rgb(12, 31, 34);
+        text-shadow: rgba(16, 202, 235, 0.2);
+    }
+    
+    .userprofile:hover .user_dropdown 
+    {
+        cursor: pointer;
+        display: block;
+    }
+    
+    
+    
+    
+    
+    
+    .userprofile img:active::after .user_dropdown{
+        cursor: pointer;
+        display: block;
+    }
+    
+    .userprofile img:hover{
+        cursor: pointer;
+        width: 45px;
+    }
+    
+    .sec{
+        background: rgba(0, 0, 0, 0.7) url('../img/bi.jpg');
+        block-size: cover; 
+        background-repeat: no-repeat; 
+    }
+
+
+footer{
+
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px;
+    color: #fff;
+    background-color: #252525;
+    }
+    
+    .footer > * {
+    flex:  1 100%;
+    }
+    
+    .footer-left {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+    }
+    
+
+    .footer ul {
+    list-style: none;
+    padding-left: 0;
+    }
+    
+    .footer li {
+    line-height: 2em;
+    }
+    
+    .footer a {
+    text-decoration: none;
+    }
+    
+    .footer-right {
+    display: flex;
+    flex-flow: row wrap;
+    }
+    
+    .footer-right > * {
+    flex: 1 50%;
+    margin-right: 1.25em;
+    }
+    
+    .box a {
+    color: #999;
+    }
+    .footer-bottom {
+    text-align: center;
+    color: #999;
+    padding-top: 50px;
+    }
+    
+    .footer-left p {
+    padding-right: 20%;
+    color: #999;
+    }   
+    .socials a{
+        background: #434446;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .socials a i{
+        color: #e7f2f4;
+        padding: 10px 12px;
+        font-size: 20px;
+    }
+    
+    @media screen and (min-width: 600px) {
+    .footer-right > * {
+    flex: 1;
+    }
+    
+    .footer-left {
+    flex: 1 0px;
+    }
+    
+    .footer-right {
+    flex: 2 0px;
+    }
+    }
+    @media (max-width: 600px){
+        .footer{
+            padding: 15px;
+        }
+
+    }
+

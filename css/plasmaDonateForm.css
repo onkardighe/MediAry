@@ -1,0 +1,74 @@
+*{
+    margin-right: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+}
+
+div.main{
+    width: 100%;
+    background: url("../img/bi.jpg");
+    background-blend-mode: darken;
+    /* filter: blur(4px);
+    -webkit-filter: blur(8px); */
+
+}
+
+div.registerform{
+    background-color: rgba(75, 63, 63, 0.5);
+    width: 40%;
+    text-align: center;
+    font-size: 95%;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+h2{
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+label{
+    font-family: sans-serif;
+    font-size: 100%;
+    font-style: italic;
+    align-content: left;
+}
+
+input#name,
+input#age,
+input#mobilenumber
+{
+    width: 50%;
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    outline: 0;
+    padding: 1%;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+input#age::-webkit-outer-spin-button,
+input#age::-webkit-inner-spin-button,
+input#mobilenumber::-webkit-outer-spin-button,
+input#mobilenumber::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn:hover
+{
+    color: black;
+    background-color: white;
+}
