@@ -6,7 +6,7 @@ if (!isset($_SESSION['access_token'])) {
 }
 else
 {
-    include("plasmaFormConnection.php");
+    include("dbConnection.php");
 }
 ?>
 
@@ -52,32 +52,32 @@ else
     </nav>
     <!-- BODY STARTS HERE -->
     <div class="main">
-        <div class="register">
+        <div class="registerform">
             <h2>Register Here</h2>
 
-            <form id="register" method="get">
+            <form id="register" method="post">
                 <label>First Name </label>
                 <br>
-                <input type="text" name ="fname" id="name" placeholder="Enter First Name">
+                <input type="text" name ="fname" id="name" placeholder="Enter First Name" required>
                 <br><br>
                 <label >Last Name</label>
                  <br>
-                <input type="text" name="lname" id="name" placeholder="Enter Last Name">
+                <input type="text" name="lname" id="name" placeholder="Enter Last Name" required>
                 <br><br>
                  <label>Age</label>
                 <br>
-                <input type="number" name="age" id="name" placeholder="How old are you ?">
+                <input type="number" name="age" id="age" placeholder="How old are you ?" required>
                 <br><br>
                  
                 <label>Gender</label>
                 <br>
                 &nbsp;&nbsp;&nbsp;
-                <input type="radio" name="gender" id="male" value="Male">
+                <input type="radio" name="gender" id="male" value="Male" required>
                 &nbsp;
                 <span id="male">Male</span>
 
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="gender" id="female" value="Female">
+                <input type="radio" name="gender" id="female" value="Female" >
                 &nbsp;
                 <span id="male">Female</span>
                 
@@ -89,28 +89,27 @@ else
                 
                 <label>Blood Group</label>
                 <br>
-                <input type="text" name="bloodgroup" id="name" placeholder="Blood Group">
+                <input type="text" name="bloodgroup" id="name" placeholder="Blood Group" required>
                 <br><br> 
 
                 <label>Date of Discharge (Recovery From Covid)</label>
                 <br>
-                <input type="date" name="dateofrecovery" id="name">
+                <input type="date" name="dateofrecovery" id="name" required>
                 <br><br>
 
                 <label>Mobile Number</label>
                 <br>
-                <input type="tel" pattern="[0-9]{10}" name="mobilenumber" id="name">
+                <input type="tel" pattern="[0-9]{10}" name="mobilenumber" id="mobilenumber" required>
                 <br><br>
-
 
                 <label>Email</label>
                 <br>
-                <input type="email" name="email" id="name" placeholder="Enter Valid Email">
+                <input type="email" name="email" id="name" placeholder="Enter Valid Email" required>
                 <br><br>
 
                 <label>Any other Madical issues (Other than covid)</label>
                 <br>
-                <input type="text" name="othermedicalissue" id="name">
+                <input type="text" name="othermedicalissue" id="name" required>
                 <br><br> 
                 <input class="btn" type="submit" value="Submit" name="submit" id="submit"> 
             </form>
@@ -119,20 +118,19 @@ else
 </body>
 </html>
 
-
 <?php
 
-    if(isset($_GET["submit"]))
+    if(isset($_POST["submit"]))
     {
-        $fname = $_GET['fname'];
-        $lname = $_GET['lname'];
-        $age = $_GET['age'];
-        $gender = $_GET['gender'];
-        $bloodgroup = $_GET['bloodgroup'];
-        $dateofrecovery = $_GET['dateofrecovery'];
-        $mobilenumber = $_GET['mobilenumber'];
-        $email = $_GET['email'];
-        $othermedicalissue = $_GET['othermedicalissue'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $age = $_POST['age'];
+        $gender = $_POST['gender'];
+        $bloodgroup = $_POST['bloodgroup'];
+        $dateofrecovery = $_POST['dateofrecovery'];
+        $mobilenumber = $_POST['mobilenumber'];
+        $email = $_POST['email'];
+        $othermedicalissue = $_POST['othermedicalissue'];
     
         $query = "INSERT INTO `plasma_registration`(`fname`,`lname`,`age`,`gender`,`bgrp`,`recoverydate`,`mono`,`email`,`other`) VALUES ('$fname','$lname','$age','$gender','$bloodgroup','$dateofrecovery','$mobilenumber','$email','$othermedicalissue')";
 
@@ -141,13 +139,13 @@ else
     
         if($data)
         {
-            echo "data inserted into database";
+            echo "<script>alert('You are registered as Plasma Donor !');</script>";
+            echo "<script>location.href='vaccCenter.php';</script>";
         }
         else
         {
-            echo "Failed to insert data";
+            echo "<script>alert('Invalid Data !');</script>";
         }
+	    exit();
     }
-
-
 ?>

@@ -172,17 +172,14 @@ if (!isset($_SESSION['access_token'])) {
         </ul>
         <div class="footer-bottom">
             <p>An effort by Team Mediary to keep our loved ones safe and informed!</p>
-            <p>All rights reserved by ©Mediary 2021 </p>
+            <p>All rights reserved by ©Mediary.tech 2021 </p>
         </div>
     </footer>
     <script src="js/resp.js"></script>
+    
 </body>
-
-<!-- JS FOR APIS STARTS-->
-
-
-
 </html>
+
 
 
 

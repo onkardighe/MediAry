@@ -4,7 +4,7 @@ if (!isset($_SESSION['access_token'])) {
     header('Location: signin/login.php');
     exit();
 } else {
-    include("plasmaFormConnection.php");
+    include("dbConnection.php");
 }
 ?>
 
@@ -19,10 +19,10 @@ if (!isset($_SESSION['access_token'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/vaccCenter.js"></script>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <link rel="stylesheet" href="css/counter.css"> -->
     <link rel="stylesheet" href="css/vaccCenter.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Mediary Vaccinations</title>
 </head>
@@ -61,13 +61,15 @@ if (!isset($_SESSION['access_token'])) {
     <!-- BODY STARTS HERE -->
     <section class="bg" id="bg">
         <nav class="vaccnav" id="">
-            <button class="btn" onclick="openbeds()">Vaccinatio Centers</button>
+            
+            <button class="btn" onclick="openVaccCent()">Vaccination Centers</button>
             <button class="btn" onclick="openbeds()">Beds</button>
             <button class="btn" onclick="location.href='plasmaDonateForm.php'">Donate Plasma</button>
             <button class="btn" onclick="openPlasmaResources()">Plasma Resources</button>
         </nav>
         <!-- VACCINE CLASS -->
         <div class="vaccform" id="vaccform" style="display: block;">
+        <br><br><br><br>
             <h1>Vaccine Tracker</h1>
             <h2>Select Vaccination Centers</h2>
 
@@ -137,7 +139,7 @@ if (!isset($_SESSION['access_token'])) {
         <!-- BEDS CLASS  -->
         <!-- <div class="bedform" id="bedform" style="display: block;">  -->
         <div class="bedform" id="bedform" style="display: none;">
-            <br>
+            <br><br><br><br>
             <h1>Beds in Nashik</h1>
             <br><br>
             <h3>Select Any hospital</h3>
@@ -210,15 +212,16 @@ if (!isset($_SESSION['access_token'])) {
                     <i class="fas fa-times-circle fa-2x"></i>
                 </a>
             </div>
-
         </div>
 
         <!-- PLASMA RESOURCES  -->
         <div class="plasmaResources" id="plasmaResources" style="display: none;">
+        <br><br><br><br>
             <div class="plasmadata">
                 <table>
                     <thead style="color: white">
                         <tr>
+                            <td>Sr. No.</td>
                             <td>First Name</td>
                             <td>Last Name</td>
                             <td>Age</td>
@@ -246,7 +249,6 @@ if (!isset($_SESSION['access_token'])) {
                     </tbody>
                 </table>
             </div>
-
         </div>
     </section>
     <footer class="footer">
